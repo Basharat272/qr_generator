@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://generateqr.pages.dev/sitemap.xml

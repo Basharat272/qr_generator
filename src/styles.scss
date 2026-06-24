@@ -1,0 +1,103 @@
+/* ─── Design tokens ─────────────────────────────────────────────── */
+:root {
+  --font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  --bg: #f4f2ff;
+  --bg-accent: #ede9fe;
+  --surface: #ffffff;
+  --surface-raised: #faf9ff;
+  --border: #e4e0f5;
+  --text: #1a1633;
+  --text-muted: #6b6585;
+  --text-subtle: #9893b0;
+
+  --primary: #6d28d9;
+  --primary-hover: #5b21b6;
+  --primary-soft: #ede9fe;
+  --primary-glow: rgba(109, 40, 217, 0.25);
+
+  --error: #dc2626;
+  --error-soft: #fef2f2;
+
+  --shadow-sm: 0 1px 2px rgba(26, 22, 51, 0.05);
+  --shadow-md: 0 8px 30px rgba(26, 22, 51, 0.08);
+  --shadow-lg: 0 20px 60px rgba(26, 22, 51, 0.12);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+[data-theme='dark'] {
+  --bg: #0f0d1a;
+  --bg-accent: #1a1630;
+  --surface: #1a1730;
+  --surface-raised: #211d3a;
+  --border: #2e2a4a;
+  --text: #f0eeff;
+  --text-muted: #a09bb8;
+  --text-subtle: #6b6585;
+
+  --primary: #a78bfa;
+  --primary-hover: #c4b5fd;
+  --primary-soft: #2e2550;
+  --primary-glow: rgba(167, 139, 250, 0.2);
+
+  --error: #f87171;
+  --error-soft: #2d1515;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem 2.5rem;
+  position: relative;
+  background-image: url('/assets/bg-pattern.jpg');
+  background-repeat: repeat;
+  background-size: 200px auto;
+  background-attachment: fixed;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: rgba(244, 242, 255, 0.86);
+  transition: background var(--transition);
+}
+
+[data-theme='dark'] body::before {
+  background: rgba(15, 13, 26, 0.9);
+}
+
+app-root {
+  display: contents;
+}
